@@ -32,7 +32,7 @@
             <tbody>
                 <tr class="period-row">
                     <td>1st</td>
-                    <td>08:30 - 09:45</td>
+                    <td>08:30 - 09:45 <button class="edit-time-btn">Edit</button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -41,7 +41,7 @@
                 </tr>
                 <tr class="period-row">
                     <td>2nd</td>
-                    <td>10:00 - 11:15</td>
+                    <td>10:00 - 11:15 <button class="edit-time-btn">Edit</button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -50,7 +50,7 @@
                 </tr>
                 <tr class="period-row">
                     <td>3rd</td>
-                    <td>11:30 - 12:45</td>
+                    <td>11:30 - 12:45 <button class="edit-time-btn">Edit</button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -59,7 +59,7 @@
                 </tr>
                 <tr class="period-row">
                     <td>4th</td>
-                    <td>13:00 - 14:15</td>
+                    <td>13:00 - 14:15 <button class="edit-time-btn">Edit</button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -68,7 +68,7 @@
                 </tr>
                 <tr class="period-row">
                     <td>5th</td>
-                    <td>14:30 - 15:45</td>
+                    <td>14:30 - 15:45 <button class="edit-time-btn">Edit</button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -77,7 +77,7 @@
                 </tr>
                 <tr class="period-row">
                     <td>6th</td>
-                    <td>16:00 - 17:15</td>
+                    <td>16:00 - 17:15 <button class="edit-time-btn">Edit</button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -86,7 +86,7 @@
                 </tr>
                 <tr class="period-row">
                     <td>7th</td>
-                    <td>17:30 - 18:45</td>
+                    <td>17:30 - 18:45 <button class="edit-time-btn">Edit</button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -95,7 +95,7 @@
                 </tr>
                 <tr class="period-row">
                     <td>After Class</td>
-                    <td>19:00 - 20:00</td>
+                    <td>19:00 - 20:00 <button class="edit-time-btn">Edit</button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -106,7 +106,17 @@
         </table>
     </main>
 
-    <!-- Link to JavaScript file -->
+    <!-- Modal for Editing Time -->
+    <div id="edit-time-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Edit Time</h2>
+            <label for="time-input">New Time:</label>
+            <input type="text" id="time-input">
+            <button id="save-time-btn">Save</button>
+        </div>
+    </div>
+
     <script src="scripts.js"></script>
 </body>
 

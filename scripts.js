@@ -1,39 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cells = document.querySelectorAll('td');
-    cells.forEach(cell => {
-        cell.addEventListener('click', () => {
-            const subject = prompt('Enter subject:');
-            cell.textContent = subject;
-            saveTimetable();
+    const editButtons = document.querySelectorAll('.edit-time-btn');
+    const modal = document.getElementById('edit-time-modal');
+    const closeBtn = document.querySelector('.close-btn');
+    const saveBtn = document.getElementById('save-time-btn');
+    const timeInput = document.getElementById('time-input');
+    let currentEditCell;
+
+    editButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            currentEditCell = event.target.parentElement;
+            const currentTime = currentEditCell.childNodes[0].nodeValue.trim();
+            timeInput.value = currentTime;
+            modal.style.display = 'block';
         });
     });
-    loadTimetable();
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    saveBtn.addEventListener('click', () => {
+        const newTime = timeInput.value;
+        if (newTime) {
+            currentEditCell.childNodes[0].nodeValue = newTime + ' ';
+        }
+        modal.style.display = 'none';
+    });
 });
-
-function saveTimetable() {
-    const rows = document.querySelectorAll('.period-row');
-    const timetable = Array.from(rows).map(row => {
-        return Array.from(row.cells).slice(2).map(cell => cell.textContent);
-    });
-
-    fetch('/api/timetable', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(timetable)
-    });
-}
-
-function loadTimetable() {
-    fetch('/api/timetable')
-        .then(response => response.json())
-        .then(data => {
-            const rows = document.querySelectorAll('.period-row');
-            data.forEach((period, i) => {
-                period.forEach((subject, j) => {
-                    rows[i].cells[j + 2].textContent = subject;
-                });
-            });
-        });
-}
