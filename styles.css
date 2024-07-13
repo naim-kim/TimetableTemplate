@@ -34,7 +34,7 @@ h1 {
 
 table {
     width: 100%;
-    height: 80%;
+    height: 85%;
     margin: 0 auto;
     border-collapse: separate;
     border-spacing: 0;
@@ -52,7 +52,7 @@ th, td {
 }
 
 th {
-    background-color: #8f5db8;
+    background-color: #525252;
     color: white;
     border-radius: 10px 10px 0 0;
 }
