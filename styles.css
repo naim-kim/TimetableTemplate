@@ -1,6 +1,19 @@
 /* styles.css */
+
+/* Define custom fonts */
+@font-face {
+    font-family: 'SDSamliphopangcheBasic';
+    src: url('fonts/SDSamliphopangcheBasic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'SDSamliphopangcheOutline';
+    src: url('fonts/SDSamliphopangcheOutline.otf') format('opentype');
+}
+
+/* Apply custom fonts */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'SDSamliphopangcheBasic', Arial, sans-serif;
     margin: 20px;
     background-color: #f8f8f8;
 }
@@ -16,6 +29,7 @@ h1 {
     margin: 0;
     font-size: 24px;
     color: #333;
+    font-family: 'SDSamliphopangcheOutline', Arial, sans-serif;
 }
 
 table {
@@ -107,4 +121,26 @@ td:hover {
     }
 
     thead tr {
-       
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
