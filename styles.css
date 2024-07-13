@@ -35,20 +35,41 @@ h1 {
 table {
     width: 95%;
     margin: 0 auto;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 th, td {
     border: 1px solid #ddd;
     text-align: center;
-    padding: 8px;
+    padding: 12px;
+    transition: background-color 0.3s ease;
 }
 
 th {
     background-color: #8f5db8;
     color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+td:last-child {
+    border-bottom-right-radius: 10px;
 }
 
 .days {
@@ -73,6 +94,7 @@ tr:hover {
 
 td:hover {
     background-color: #bbb;
+    border-radius: 10px;
 }
 
 /* Modal Styles */
@@ -97,6 +119,7 @@ td:hover {
     border: 1px solid #888;
     width: 80%;
     max-width: 500px;
+    border-radius: 10px;
 }
 
 .close-btn {
@@ -132,6 +155,7 @@ td:hover {
         position: relative;
         padding-left: 50%;
         text-align: left;
+        border-radius: 10px;
     }
 
     td::before {
