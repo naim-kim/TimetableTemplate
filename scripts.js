@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     editButtons.forEach(button => {
         button.addEventListener('click', (event) => {
+            event.stopPropagation();
             currentEditCell = event.target.parentElement;
             const currentTime = currentEditCell.childNodes[0].nodeValue.trim();
             timeInput.value = currentTime;
@@ -31,5 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
             currentEditCell.childNodes[0].nodeValue = newTime + ' ';
         }
         modal.style.display = 'none';
+    });
+
+    const editableCells = document.querySelectorAll('.editable');
+    editableCells.forEach(cell => {
+        cell.addEventListener('click', () => {
+            const subject = prompt('Enter subject:');
+            if (subject) {
+                cell.textContent = subject;
+            }
+        });
     });
 });
