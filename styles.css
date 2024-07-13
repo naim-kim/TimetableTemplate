@@ -167,4 +167,12 @@ td:hover {
         font-weight: bold;
         white-space: nowrap;
     }
+
+    td:last-child {
+        border-bottom: 0;
+    }
+
+    .edit-time-btn {
+        margin-left: 5px;
+    }
 }
