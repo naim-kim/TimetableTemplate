@@ -39,7 +39,7 @@ table {
     border-spacing: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
 }
 
@@ -53,23 +53,7 @@ th, td {
 th {
     background-color: #525252;
     color: white;
-    border-radius: 10px 10px 0 0;
-}
-
-th:first-child {
-    border-top-left-radius: 10px;
-}
-
-th:last-child {
-    border-top-right-radius: 10px;
-}
-
-td:first-child {
-    border-bottom-left-radius: 10px;
-}
-
-td:last-child {
-    border-bottom-right-radius: 10px;
+    
 }
 
 .days {
@@ -94,7 +78,6 @@ tr:hover {
 
 td:hover {
     background-color: #bbb;
-    border-radius: 10px;
 }
 
 td .subject {
