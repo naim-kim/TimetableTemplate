@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeInput = document.getElementById('time-input');
     let currentEditCell;
 
-    // Function to attach event listeners to edit buttons and editable cells
     function attachEventListeners(row) {
         row.querySelector('.edit-time-btn').addEventListener('click', (event) => {
             event.stopPropagation();
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         row.querySelectorAll('.editable').forEach(cell => {
             cell.addEventListener('click', () => {
-                const subject = prompt('Enter subject:');
+                const subject = prompt('Enter: ');
                 if (subject) {
                     cell.textContent = subject;
                 }
@@ -65,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         timetableBody.appendChild(newRow);
 
-        // Attach event listeners to the new row
         attachEventListeners(newRow);
     });
 });
