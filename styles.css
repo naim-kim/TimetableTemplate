@@ -196,4 +196,11 @@ td:hover {
     .modal-content {
         width: 90%;
     }
+
+    td.editable div {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+    
 }
