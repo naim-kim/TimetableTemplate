@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('edit-time-modal');
+    const cellModal = document.getElementById('edit-cell-modal');
     const closeBtn = document.querySelector('.close-btn');
+    const closeCellBtn = document.querySelector('.close-cell-btn');
     const saveBtn = document.getElementById('save-time-btn');
+    const saveCellBtn = document.getElementById('save-cell-btn');
     const timeInput = document.getElementById('time-input');
+    const subjectInput = document.getElementById('subject-input');
+    const placeInput = document.getElementById('place-input');
     let currentEditCell;
 
     // Function to attach event listeners to edit buttons and editable cells
@@ -17,15 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         row.querySelectorAll('.editable').forEach(cell => {
             cell.addEventListener('click', () => {
-                const subject = prompt('Enter subject name:');
-                const place = prompt('Enter place:');
-                if (subject && place) {
-                    cell.innerHTML = `<div>${subject}</div><div>${place}</div>`;
-                } else if (subject) {
-                    cell.innerHTML = `<div>${subject}</div>`;
-                } else if (place) {
-                    cell.innerHTML = `<div>${place}</div>`;
-                }
+                currentEditCell = cell;
+                subjectInput.value = cell.querySelector('.subject') ? cell.querySelector('.subject').textContent : '';
+                placeInput.value = cell.querySelector('.place') ? cell.querySelector('.place').textContent : '';
+                cellModal.style.display = 'block';
             });
         });
     }
@@ -38,9 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
     });
 
+    closeCellBtn.addEventListener('click', () => {
+        cellModal.style.display = 'none';
+    });
+
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';
+        } else if (event.target === cellModal) {
+            cellModal.style.display = 'none';
         }
     });
 
@@ -50,6 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
             currentEditCell.childNodes[0].nodeValue = newTime + ' ';
         }
         modal.style.display = 'none';
+    });
+
+    saveCellBtn.addEventListener('click', () => {
+        const subject = subjectInput.value;
+        const place = placeInput.value;
+        if (subject && place) {
+            currentEditCell.innerHTML = `<div class="subject">${subject}</div><div class="place">${place}</div>`;
+        } else if (subject) {
+            currentEditCell.innerHTML = `<div class="subject">${subject}</div>`;
+        } else if (place) {
+            currentEditCell.innerHTML = `<div class="place">${place}</div>`;
+        }
+        cellModal.style.display = 'none';
     });
 
     // Add new row functionality
