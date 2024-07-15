@@ -97,6 +97,16 @@ td:hover {
     border-radius: 10px;
 }
 
+td .subject {
+    font-weight: bold;
+    display: block;
+}
+
+td .place {
+    font-size: 0.9em;
+    display: block;
+}
+
 /* Modal Styles */
 .modal {
     display: none;
