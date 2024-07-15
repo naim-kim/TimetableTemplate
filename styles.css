@@ -230,10 +230,6 @@ td .place {
         border-bottom: 0;
     }
 
-    .edit-time-btn {
-        margin-left: 5px;
-    }
-
     /* Adjust padding for smaller screens */
     th, td {
         padding: 8px;
