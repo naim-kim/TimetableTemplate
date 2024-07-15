@@ -8,18 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeInput = document.getElementById('time-input');
     const subjectInput = document.getElementById('subject-input');
     const placeInput = document.getElementById('place-input');
+    const saveImageBtn = document.getElementById('save-image-btn');
+    const editTimeBtn = document.getElementById('edit-time-btn');
     let currentEditCell;
 
-    // Function to attach event listeners to edit buttons and editable cells
+    // Function to attach event listeners to editable cells
     function attachEventListeners(row) {
-        row.querySelector('.edit-time-btn').addEventListener('click', (event) => {
-            event.stopPropagation();
-            currentEditCell = event.target.parentElement;
-            const currentTime = currentEditCell.childNodes[0].nodeValue.trim();
-            timeInput.value = currentTime;
-            modal.style.display = 'block';
-        });
-
         row.querySelectorAll('.editable').forEach(cell => {
             cell.addEventListener('click', () => {
                 currentEditCell = cell;
@@ -27,6 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 placeInput.value = cell.querySelector('.place') ? cell.querySelector('.place').textContent : '';
                 cellModal.style.display = 'block';
             });
+        });
+
+        row.querySelector('td:nth-child(2)').addEventListener('click', (event) => {
+            event.stopPropagation();
+            currentEditCell = event.target;
+            const currentTime = currentEditCell.textContent.trim();
+            timeInput.value = currentTime;
+            modal.style.display = 'block';
         });
     }
 
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     saveBtn.addEventListener('click', () => {
         const newTime = timeInput.value;
         if (newTime) {
-            currentEditCell.childNodes[0].nodeValue = newTime + ' ';
+            currentEditCell.textContent = newTime;
         }
         modal.style.display = 'none';
     });
@@ -80,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newRow.classList.add('period-row');
         newRow.innerHTML = `
             <td data-label="Period">New</td>
-            <td data-label="Time">--:-- - --:-- <button class="edit-time-btn">Edit</button></td>
+            <td data-label="Time">--:-- - --:--</td>
             <td data-label="Monday" class="editable"></td>
             <td data-label="Tuesday" class="editable"></td>
             <td data-label="Wednesday" class="editable"></td>
@@ -91,5 +93,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Attach event listeners to the new row
         attachEventListeners(newRow);
+    });
+
+    // Save timetable as an image
+    saveImageBtn.addEventListener('click', () => {
+        html2canvas(document.querySelector('table'), {
+            onrendered: function(canvas) {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'timetable.png';
+                link.click();
+            }
+        });
+    });
+
+    // Attach event listener to edit time button
+    editTimeBtn.addEventListener('click', () => {
+        const timeCells = document.querySelectorAll('td:nth-child(2)');
+        timeCells.forEach(cell => {
+            cell.addEventListener('click', (event) => {
+                event.stopPropagation();
+                currentEditCell = event.target;
+                const currentTime = currentEditCell.textContent.trim();
+                timeInput.value = currentTime;
+                modal.style.display = 'block';
+            });
+        });
     });
 });
