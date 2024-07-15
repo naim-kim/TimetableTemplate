@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const subjectInput = document.getElementById('subject-input');
     const placeInput = document.getElementById('place-input');
     const saveImageBtn = document.getElementById('save-image-btn');
-    const editTimeBtn = document.getElementById('edit-time-btn');
     let currentEditCell;
 
     // Function to attach event listeners to editable cells
@@ -84,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <td data-label="Period">New</td>
             <td data-label="Time">--:-- - --:--</td>
             <td data-label="Monday" class="editable"></td>
-            <td data-label="Tuesday" class="editable"></td>
+            <td data-label="Tuesday" class="editable"></
             <td data-label="Wednesday" class="editable"></td>
             <td data-label="Thursday" class="editable"></td>
             <td data-label="Friday" class="editable"></td>
@@ -104,20 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.download = 'timetable.png';
                 link.click();
             }
-        });
-    });
-
-    // Attach event listener to edit time button
-    editTimeBtn.addEventListener('click', () => {
-        const timeCells = document.querySelectorAll('td:nth-child(2)');
-        timeCells.forEach(cell => {
-            cell.addEventListener('click', (event) => {
-                event.stopPropagation();
-                currentEditCell = event.target;
-                const currentTime = currentEditCell.textContent.trim();
-                timeInput.value = currentTime;
-                modal.style.display = 'block';
-            });
         });
     });
 });
