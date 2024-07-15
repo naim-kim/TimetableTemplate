@@ -29,7 +29,7 @@
                     <th scope="col" class="days">Friday</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="timetable-body">
                 <tr class="period-row">
                     <td>1st</td>
                     <td>08:30 - 09:45 <button class="edit-time-btn">Edit</button></td>
@@ -115,6 +115,19 @@
             <label for="time-input">New Time:</label>
             <input type="text" id="time-input">
             <button id="save-time-btn">Save</button>
+        </div>
+    </div>
+
+    <!-- Modal for Adding Subject and Place -->
+    <div id="edit-cell-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-cell-btn">&times;</span>
+            <h2>Edit Cell</h2>
+            <label for="subject-input">Subject Name:</label>
+            <input type="text" id="subject-input">
+            <label for="place-input">Place:</label>
+            <input type="text" id="place-input">
+            <button id="save-cell-btn">Save</button>
         </div>
     </div>
 
