@@ -234,6 +234,7 @@ td .place {
     cursor: pointer;
     font-size: 24px;
     margin: 5px;
+    padding: 10px;
     color: #525252;
     transition: color 0.3s ease;
 }
