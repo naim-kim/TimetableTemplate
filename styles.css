@@ -213,6 +213,10 @@ td .place {
         border-bottom: 0;
     }
 
+    .edit-time-btn {
+        margin-left: 5px;
+    }
+
     /* Adjust padding for smaller screens */
     th, td {
         padding: 8px;
@@ -221,4 +225,19 @@ td .place {
     .modal-content {
         width: 90%;
     }
+}
+
+/* Icon Button Styles */
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 5px;
+    color: #525252;
+    transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+    color: #333;
 }
