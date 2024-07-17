@@ -234,11 +234,63 @@ td .place {
     cursor: pointer;
     font-size: 24px;
     margin: 5px;
-    padding: 10px;
     color: #525252;
     transition: color 0.3s ease;
+    position: relative;
 }
 
 .icon-btn:hover {
     color: #333;
+}
+
+/* Icon Button Styles */
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 5px;
+    color: #525252;
+    transition: color 0.3s ease;
+    position: relative;
+    align-items: center;
+}
+
+.icon-btn:hover {
+    color: #333;
+}
+
+/* Tooltip styles */
+.icon-btn .tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 125%; /* Position below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px; /* Smaller font size */
+    white-space: nowrap;
+}
+
+.icon-btn .tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.icon-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
