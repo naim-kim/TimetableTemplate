@@ -35,7 +35,7 @@ h1 {
 table {
     width: 100%;
     margin: 0 auto;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -46,26 +46,15 @@ table {
 th, td {
     border: 1px solid #ddd;
     text-align: center;
-    padding: 12px;
+    padding: 8px;
     transition: background-color 0.3s ease;
+    width: 5%;
 }
 
 th {
     background-color: #525252;
     color: white;
     
-}
-
-.days {
-    width: 200px;
-}
-
-.period {
-    width: 80px;
-}
-
-.time {
-    width: 150px;
 }
 
 tr:nth-child(even) {
@@ -166,66 +155,6 @@ td .place {
     background-color: #333;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    body {
-        margin: 10px;
-    }
-
-    header {
-        padding: 10px;
-        font-size: 18px;
-    }
-
-    table, thead, tbody, th, td, tr {
-        display: block;
-        width: 100%;
-    }
-
-    thead tr {
-        display: none;
-    }
-
-    tr {
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-    }
-
-    td {
-        position: relative;
-        padding-left: 50%;
-        text-align: left;
-        border-radius: 10px;
-    }
-
-    td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        width: calc(50% - 20px);
-        padding-right: 10px;
-        text-align: left;
-        font-weight: bold;
-    }
-
-    td:last-child {
-        border-bottom: 0;
-    }
-
-    .edit-time-btn {
-        margin-left: 5px;
-    }
-
-    /* Adjust padding for smaller screens */
-    th, td {
-        padding: 8px;
-    }
-
-    .modal-content {
-        width: 90%;
-    }
-}
 
 /* Icon Button Styles */
 .icon-btn {
