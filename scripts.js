@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeInput = document.getElementById('time-input');
     const subjectInput = document.getElementById('subject-input');
     const placeInput = document.getElementById('place-input');
+    const colorInput = document.getElementById('color-input');
     const saveImageBtn = document.getElementById('save-image-btn');
     let currentEditCell;
 
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentEditCell = cell;
                 subjectInput.value = cell.querySelector('.subject') ? cell.querySelector('.subject').textContent : '';
                 placeInput.value = cell.querySelector('.place') ? cell.querySelector('.place').textContent : '';
+                colorInput.value = cell.style.backgroundColor || '#ffffff'; // Default color
                 cellModal.style.display = 'block';
             });
         });
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     saveCellBtn.addEventListener('click', () => {
         const subject = subjectInput.value;
         const place = placeInput.value;
+        const color = colorInput.value;
         if (subject && place) {
             currentEditCell.innerHTML = `<div class="subject">${subject}</div><div class="place">${place}</div>`;
         } else if (subject) {
@@ -69,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (place) {
             currentEditCell.innerHTML = `<div class="place">${place}</div>`;
         }
+        currentEditCell.style.backgroundColor = color; // Set the background color
         cellModal.style.display = 'none';
     });
 
