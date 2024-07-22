@@ -1,6 +1,4 @@
-/* styles.css */
-
-/* Define custom fonts */
+/* Fonts */
 @font-face {
     font-family: 'SDSamliphopangcheBasic';
     src: url('fonts/SDSamliphopangcheBasic.otf') format('opentype');
@@ -11,7 +9,6 @@
     src: url('fonts/SDSamliphopangcheOutline.otf') format('opentype');
 }
 
-/* Apply custom fonts */
 body {
     font-family: 'SDSamliphopangcheBasic', Arial, sans-serif;
     margin: 20px;
