@@ -151,23 +151,6 @@ td .place {
     background-color: #333;
 }
 
-
-/* Icon Button */
-.icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    margin: 5px;
-    color: #525252;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.icon-btn:hover {
-    color: #333;
-}
-
 /* Icon Button */
 .icon-btn {
     background: none;
