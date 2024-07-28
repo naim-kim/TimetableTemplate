@@ -9,6 +9,7 @@
     src: url('fonts/SDSamliphopangcheOutline.otf') format('opentype');
 }
 
+/* Styles */
 body {
     font-family: 'SDSamliphopangcheBasic', Arial, sans-serif;
     margin: 20px;
