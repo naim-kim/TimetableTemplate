@@ -12,7 +12,7 @@ app.get('/api/timetable', (req, res) => {
 
 app.post('/api/timetable', (req, res) => {
     timetable = req.body;
-    res.json({ message: 'Timetable updated successfully!' });
+    res.json({ message: 'Updated successfully!' });
 });
 
 const port = process.env.PORT || 3000;
