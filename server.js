@@ -15,7 +15,4 @@ app.post('/api/timetable', (req, res) => {
     res.json({ message: 'Updated successfully!' });
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+
