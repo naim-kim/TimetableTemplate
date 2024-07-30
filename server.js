@@ -10,9 +10,6 @@ app.get('/api/timetable', (req, res) => {
     res.json(timetable);
 });
 
-app.post('/api/timetable', (req, res) => {
-    timetable = req.body;
-    res.json({ message: 'Updated successfully!' });
-});
+
 
 
