@@ -19,9 +19,9 @@ app.get('/api/timetable', (req, res) => {
 
 // Define a POST endpoint to update timetable
 app.post('/api/timetable', (req, res) => {
-    // Update timetable with data from request body
+    // Update timetable
     timetable = req.body;
-    // Send a success message as a JSON response
+    // Send a success message(JSON)
     res.json({ message: 'Updated successfully!' });
 });
 
