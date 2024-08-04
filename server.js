@@ -6,12 +6,11 @@ const app = express();
 // Use body-parser middleware to parse JSON requests
 app.use(bodyParser.json());
 
-// Initialize an empty timetable array
 let timetable = [];
 
-// Define a GET endpoint to retrieve timetable
+// Define GET endpoint to retrieve timetable
 app.get('/api/timetable', (req, res) => {
-    // Send timetable array as a JSON response
+    // Send timetable array as JSON response
     res.json(timetable);
 });
 
@@ -23,7 +22,6 @@ app.post('/api/timetable', (req, res) => {
     res.json({ message: 'Updated successfully!' });
 });
 
-// Set port from environment variables or default to 3000
 const port = process.env.PORT || 3000;
 // Start server and listen on specified port
 app.listen(port, () => {
