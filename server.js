@@ -1,6 +1,4 @@
-// Import express module
 const express = require('express');
-// Import body-parser module
 const bodyParser = require('body-parser');
 
 // Create an instance of an Express application
