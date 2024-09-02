@@ -5,12 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeCellBtn = document.querySelector('.close-cell-btn');
     const saveBtn = document.getElementById('save-time-btn');
     const saveCellBtn = document.getElementById('save-cell-btn');
+    const copyCellBtn = document.getElementById('copy-cell-btn'); // New Copy button
     const timeInput = document.getElementById('time-input');
     const subjectInput = document.getElementById('subject-input');
     const placeInput = document.getElementById('place-input');
     const colorInput = document.getElementById('color-input');
-    const saveImageBtn = document.getElementById('save-image-btn');
     let currentEditCell;
+    let copiedContent = null; // Variable to store copied cell content
 
     // Function to attach event listeners to editable cells
     function attachEventListeners(row) {
@@ -76,6 +77,29 @@ document.addEventListener('DOMContentLoaded', () => {
         cellModal.style.display = 'none';
     });
 
+    // New function to copy cell content
+    copyCellBtn.addEventListener('click', () => {
+        if (currentEditCell) {
+            copiedContent = {
+                subject: subjectInput.value,
+                place: placeInput.value,
+                color: colorInput.value
+            };
+            cellModal.style.display = 'none'; // Close the modal after copying
+        }
+    });
+
+    // Attach event listener to paste copied content into a new cell
+    document.querySelectorAll('.editable').forEach(cell => {
+        cell.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); // Prevent the default right-click menu
+            if (copiedContent) {
+                cell.innerHTML = `<div class="subject">${copiedContent.subject}</div><div class="place">${copiedContent.place}</div>`;
+                cell.style.backgroundColor = copiedContent.color; // Apply the copied background color
+            }
+        });
+    });
+
     // Add new row functionality
     const addRowBtn = document.getElementById('add-row-btn');
     const timetableBody = document.querySelector('tbody');
@@ -87,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <td data-label="Period">New</td>
             <td data-label="Time">--:-- - --:--</td>
             <td data-label="Monday" class="editable"></td>
-            <td data-label="Tuesday" class="editable"></
+            <td data-label="Tuesday" class="editable"></td>
             <td data-label="Wednesday" class="editable"></td>
             <td data-label="Thursday" class="editable"></td>
             <td data-label="Friday" class="editable"></td>
