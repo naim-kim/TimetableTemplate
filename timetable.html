@@ -18,19 +18,20 @@
         <table>
             <thead>
                 <tr>
-                    <th scope="col" width="50px">-</th>
                     <th scope="col" class="time_col">-</th>
-                    <th scope="col" class="days">M</th>
-                    <th scope="col" class="days">T</th>
-                    <th scope="col" class="days">w</th>
-                    <th scope="col" class="days">T</th>
-                    <th scope="col" class="days">F</th>
+                    <th scope="col" class="days">Mon</th>
+                    <th scope="col" class="days">Tue</th>
+                    <th scope="col" class="days">wed</th>
+                    <th scope="col" class="days">Thu</th>
+                    <th scope="col" class="days">Fri</th>
+                    <th scope="col" class="days">Sat</th>
+                    <th scope="col" class="days">Sun</th>
                 </tr>
             </thead>
             <tbody id="timetable-body">
                 <tr class="period-row">
-                    <td>1st</td>
-                    <td>08:30 - 09:45</td>
+
+                    <td>07-08</td>
                     <td class="editable"></td>
                     <td class="editable"></td>
                     <td class="editable"></td>
@@ -38,8 +39,8 @@
                     <td class="editable"></td>
                 </tr>
                 <tr class="period-row">
-                    <td>2nd</td>
-                    <td>10:00 - 11:15</td>
+
+                    <td>08-09</td>
                     <td class="editable"></td>
                     <td class="editable"></td>
                     <td class="editable"></td>
@@ -47,8 +48,8 @@
                     <td class="editable"></td>
                 </tr>
                 <tr class="period-row">
-                    <td>3rd</td>
-                    <td>11:30 - 12:45</td>
+
+                    <td>10-11</td>
                     <td class="editable"></td>
                     <td class="editable"></td>
                     <td class="editable"></td>
@@ -56,8 +57,8 @@
                     <td class="editable"></td>
                 </tr>
                 <tr class="period-row">
-                    <td>4th</td>
-                    <td>13:00 - 14:15</td>
+
+                    <td>11-12</td>
                     <td class="editable"></td>
                     <td class="editable"></td>
                     <td class="editable"></td>
@@ -65,8 +66,8 @@
                     <td class="editable"></td>
                 </tr>
                 <tr class="period-row">
-                    <td>5th</td>
-                    <td>14:30 - 15:45</td>
+
+                    <td>13-14</td>
                     <td class="editable"></td>
                     <td class="editable"></td>
                     <td class="editable"></td>
@@ -74,8 +75,8 @@
                     <td class="editable"></td>
                 </tr>
                 <tr class="period-row">
-                    <td>6th</td>
-                    <td>16:00 - 17:15</td>
+
+                    <td>14-00</td>
                     <td class="editable"></td>
                     <td class="editable"></td>
                     <td class="editable"></td>
@@ -83,8 +84,8 @@
                     <td class="editable"></td>
                 </tr>
                 <tr class="period-row">
-                    <td>7th</td>
-                    <td>17:30 - 18:45</td>
+
+                    <td>16-17</td>
                     <td class="editable"></td>
                     <td class="editable"></td>
                     <td class="editable"></td>
@@ -92,8 +93,17 @@
                     <td class="editable"></td>
                 </tr>
                 <tr class="period-row">
-                    <td>After Class</td>
-                    <td>19:00 - 20:00</td>
+
+                    <td>17-18</td>
+                    <td class="editable"></td>
+                    <td class="editable"></td>
+                    <td class="editable"></td>
+                    <td class="editable"></td>
+                    <td class="editable"></td>
+                </tr>
+                <tr class="period-row">
+
+                    <td>19-20</td>
                     <td class="editable"></td>
                     <td class="editable"></td>
                     <td class="editable"></td>
@@ -102,8 +112,10 @@
                 </tr>
             </tbody>
         </table>
-        <button id="add-row-btn" class="icon-btn"><i class="fas fa-plus"></i><span class="tooltip">Add Row</span></button>
-        <button id="save-image-btn" class="icon-btn"><i class="fas fa-save"></i><span class="tooltip">Save as Image</span></button>
+        <button id="add-row-btn" class="icon-btn"><i class="fas fa-plus"></i><span class="tooltip">Add
+                Row</span></button>
+        <button id="save-image-btn" class="icon-btn"><i class="fas fa-save"></i><span class="tooltip">Save as
+                Image</span></button>
     </main>
 
     <!-- Modal for Editing Time -->
@@ -118,23 +130,23 @@
     </div>
 
     <!-- Modal for Adding New Subject -->
-<div id="edit-cell-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-cell-btn">&times;</span>
-        <h2>Edit Cell</h2>
-        <label for="subject-input">Name:</label>
-        <input type="text" id="subject-input">
-        <br>
-        <label for="place-input">Place:</label>
-        <input type="text" id="place-input">
-        <br>
-        <label for="color-input">Color:</label>
-        <input type="color" id="color-input">
-        <br>
-        <button id="save-cell-btn">Save</button>
-        <button id="copy-cell-btn">Copy</button> <!-- Add this line -->
+    <div id="edit-cell-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-cell-btn">&times;</span>
+            <h2>Edit Cell</h2>
+            <label for="subject-input">Name:</label>
+            <input type="text" id="subject-input">
+            <br>
+            <label for="place-input">Place:</label>
+            <input type="text" id="place-input">
+            <br>
+            <label for="color-input">Color:</label>
+            <input type="color" id="color-input">
+            <br>
+            <button id="save-cell-btn">Save</button>
+            <button id="copy-cell-btn">Copy</button>
+        </div>
     </div>
-</div>
 
 
     <script src="scripts.js"></script>
